@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nova — AI Workspace for Mac</title>
+<meta name="description" content="Nova is a native macOS AI workspace that unifies a professional's entire workday in one calm window. It acts — with your approval.">
+<style>
+  :root{
+    --bg:#0d1117;
+    --bg-soft:#131a24;
+    --card:#161f2c;
+    --line:#26313f;
+    --text:#e8edf3;
+    --muted:#9aa8b8;
+    --accent:#f0a22e;
+    --accent-soft:rgba(240,162,46,.12);
+    --radius:14px;
+    --max:880px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+  header{padding:28px 0 8px}
+  .brand{display:flex;align-items:center;gap:12px}
+  .mark{
+    width:40px;height:40px;border-radius:11px;flex:0 0 auto;
+    background:linear-gradient(135deg,#f0a22e,#d93226);
+    display:flex;align-items:center;justify-content:center;
+    font-weight:700;font-size:20px;color:#fff;
+  }
+  .brand-name{font-size:20px;font-weight:700;letter-spacing:.2px}
+  .brand-sub{font-size:13px;color:var(--muted)}
+  .hero{padding:56px 0 40px;text-align:left}
+  .hero h1{
+    font-size:clamp(34px,6vw,54px);line-height:1.12;font-weight:800;letter-spacing:-.5px;
+  }
+  .hero h1 .accent{color:var(--accent)}
+  .hero .lede{margin-top:20px;font-size:clamp(17px,2.4vw,20px);color:var(--muted);max-width:640px}
+  .cta-row{margin-top:32px;display:flex;gap:14px;flex-wrap:wrap}
+  .btn{
+    display:inline-block;padding:13px 26px;border-radius:10px;font-weight:600;font-size:16px;
+    text-decoration:none;transition:transform .15s ease,opacity .15s ease;
+  }
+  .btn:hover{transform:translateY(-1px);opacity:.92}
+  .btn-primary{background:var(--accent);color:#14100a}
+  .btn-ghost{border:1px solid var(--line);color:var(--text);background:transparent}
+  section{padding:44px 0}
+  .kicker{
+    font-size:13px;font-weight:700;letter-spacing:2.2px;text-transform:uppercase;color:var(--accent);
+    margin-bottom:14px;
+  }
+  h2{font-size:clamp(24px,3.6vw,32px);font-weight:750;letter-spacing:-.3px;margin-bottom:16px}
+  p.body{color:var(--muted);font-size:17px;max-width:680px}
+  p.body + p.body{margin-top:14px}
+  .rule{
+    background:var(--accent-soft);
+    border:1px solid rgba(240,162,46,.35);
+    border-radius:var(--radius);
+    padding:34px 30px;
+  }
+  .rule .big{
+    font-size:clamp(20px,3vw,26px);font-weight:700;line-height:1.4;color:var(--text);
+  }
+  .rule p{margin-top:12px;color:var(--muted);font-size:16px;max-width:620px}
+  .grid{
+    display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px;margin-top:8px;
+  }
+  .card{
+    background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+    padding:20px 20px 16px;
+  }
+  .card h3{font-size:16px;font-weight:650;margin-bottom:6px}
+  .card p{font-size:14.5px;color:var(--muted)}
+  ul.status{list-style:none;margin-top:6px}
+  ul.status li{
+    padding:14px 0;border-bottom:1px solid var(--line);color:var(--muted);font-size:16.5px;
+  }
+  ul.status li:last-child{border-bottom:none}
+  ul.status li strong{color:var(--text)}
+  .founder{
+    display:flex;gap:22px;align-items:flex-start;background:var(--bg-soft);
+    border:1px solid var(--line);border-radius:var(--radius);padding:28px;
+  }
+  .avatar{
+    width:64px;height:64px;border-radius:50%;flex:0 0 auto;
+    background:linear-gradient(135deg,#f0a22e,#d93226);
+    display:flex;align-items:center;justify-content:center;
+    font-weight:700;font-size:22px;color:#fff;
+  }
+  .founder h3{font-size:19px;margin-bottom:4px}
+  .founder p{color:var(--muted);font-size:15.5px}
+  footer{
+    border-top:1px solid var(--line);padding:36px 0 48px;margin-top:12px;
+    color:var(--muted);font-size:15px;
+  }
+  footer .links{display:flex;gap:22px;flex-wrap:wrap;margin-top:10px}
+  footer a{color:var(--accent);text-decoration:none}
+  footer a:hover{text-decoration:underline}
+  @media (max-width:560px){
+    .founder{flex-direction:column}
+    .hero{padding:40px 0 28px}
+    section{padding:34px 0}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="brand">
+      <div class="mark">N</div>
+      <div>
+        <div class="brand-name">Nova</div>
+        <div class="brand-sub">AI workspace for Mac</div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <div class="hero">
+    <h1>The AI workspace that runs your workday — <span class="accent">with your approval.</span></h1>
+    <p class="lede">A native macOS AI workspace that runs a knowledge worker's entire day in one calm window: email, calendar, projects, research, voice, media and scheduled agents — unified, and always under your control.</p>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="mailto:pascaldahani@gmail.com">Get in touch</a>
+      <a class="btn btn-ghost" href="#about">What is Nova?</a>
+    </div>
+  </div>
+
+  <section id="about">
+    <div class="kicker">About</div>
+    <h2>One calm window for the whole workday</h2>
+    <p class="body">Nova is a native macOS AI workspace that unifies a professional's entire workday in one calm window: email triage, calendar, projects, sourced research, voice, live media and scheduled AI agents. Unlike chat assistants, Nova acts — it prepares, drafts and organizes — but nothing is ever sent or executed without the user's explicit approval. It is model-agnostic by design, routing across Claude, OpenAI-compatible endpoints and Meta's Muse models through a production multi-model router. Nova was designed and built solo by a senior humanitarian analyst in Ouagadougou, Burkina Faso, who uses it every day for real, high-stakes analytical work at Save the Children. It has been accepted into the Meta Global AI Developer Hackathon 2026. Pre-revenue today, Nova's path to market runs through curated Mac distribution (Setapp), direct licensing and professional services.</p>
+  </section>
+
+  <section>
+    <div class="rule">
+      <div class="kicker">The defining rule</div>
+      <p class="big">"Nova prepares, drafts and organizes — but nothing is ever sent or executed without the user's explicit approval."</p>
+      <p>Every action Nova takes passes through a confirmation gate. It does the work; you keep the decision. That approval gate is the product's trust signature.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="kicker">Features</div>
+    <h2>Everything the day demands, in one place</h2>
+    <div class="grid">
+      <div class="card"><h3>Mail triage</h3><p>Incoming email sorted, summarised and drafted — ready for your approval.</p></div>
+      <div class="card"><h3>Calendar</h3><p>Your schedule, woven into the same window as everything else.</p></div>
+      <div class="card"><h3>Projects</h3><p>Ongoing work tracked and organised alongside your day.</p></div>
+      <div class="card"><h3>Code review</h3><p>Review code without leaving your workspace.</p></div>
+      <div class="card"><h3>Sourced research</h3><p>Research with sources, gathered and structured for real decisions.</p></div>
+      <div class="card"><h3>Live market tracking</h3><p>Markets followed in real time, inside the workspace.</p></div>
+      <div class="card"><h3>Finance &amp; Health</h3><p>Sensitive spaces kept behind a PIN vault.</p></div>
+      <div class="card"><h3>Radio, podcasts &amp; video</h3><p>Live media — radio, podcasts and video — in the same calm window.</p></div>
+      <div class="card"><h3>Native messaging panes</h3><p>Mail and chat side by side, in native panes.</p></div>
+      <div class="card"><h3>Real-time voice</h3><p>Talk to Nova, and hear it answer, in real time.</p></div>
+      <div class="card"><h3>Scheduled AI agents</h3><p>14 scheduled AI agents working your routines in the background.</p></div>
+      <div class="card"><h3>Confirmation-gated execution</h3><p>Nothing is sent or executed without your explicit approval.</p></div>
+    </div>
+    <p class="body" style="margin-top:18px">A 3D panda avatar with voice-synced speech reacts to context as Nova works.</p>
+  </section>
+
+  <section>
+    <div class="kicker">Technology</div>
+    <h2>Native, model-agnostic, local-first</h2>
+    <div class="grid">
+      <div class="card"><h3>Native macOS (Swift)</h3><p>A true native Mac application, built in Swift — not a web wrapper.</p></div>
+      <div class="card"><h3>Multi-model router</h3><p>A production multi-model failover router spanning 23 models keeps Nova working even when a provider fails.</p></div>
+      <div class="card"><h3>Model-agnostic by design</h3><p>Claude Sonnet is the default brain via the Anthropic API; Meta Muse models are integrated for the hackathon.</p></div>
+      <div class="card"><h3>Local-first</h3><p>The workspace lives on the user's Mac.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="kicker">Status</div>
+    <h2>Where Nova stands today</h2>
+    <ul class="status">
+      <li><strong>Accepted into the Meta Global AI Developer Hackathon 2026</strong> — competition running 26 October to 4 November 2026.</li>
+      <li><strong>Used daily in production</strong> by its founder, for real professional work.</li>
+      <li><strong>Pre-revenue, fully bootstrapped, built solo.</strong></li>
+    </ul>
+  </section>
+
+  <section>
+    <div class="kicker">Founder</div>
+    <h2>Designed and built by one person</h2>
+    <div class="founder">
+      <div class="avatar">AD</div>
+      <div>
+        <h3>Ahadi Jean Cyrille Dahani</h3>
+        <p>Senior Humanitarian Analyst (Africa) at Save the Children, based in Ouagadougou, Burkina Faso. He designed and wrote Nova himself — and uses it every day for real, high-stakes analytical work.</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>Nova is not yet publicly distributed. For licensing, partnerships or press, get in touch.</div>
+    <div class="links">
+      <a href="mailto:pascaldahani@gmail.com">pascaldahani@gmail.com</a>
+      <a href="https://www.linkedin.com/in/ahadi-jean-cyrille-dahani-79037719b">LinkedIn</a>
+      <a href="https://github.com/JeanCyrilleD">GitHub</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
